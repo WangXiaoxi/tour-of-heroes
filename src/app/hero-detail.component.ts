@@ -9,17 +9,18 @@ import { HeroService } from './hero.service';
 @Component({
     selector: 'hero-detail',
     templateUrl: './hero-detail.component.html',
+    styleUrls: ['./hero-detail.component.css'],
 })
 
 export class HeroDetailComponent implements OnInit {
+
+    hero: Hero;
 
     constructor(
         private heroService: HeroService,
         private route: ActivatedRoute,
         private location: Location,  
     ) {}
-
-@Input() hero: Hero;
 
     ngOnInit(): void {
         this.route.params
